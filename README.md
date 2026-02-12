@@ -21,5 +21,8 @@ O código atual está muito acoplado e dificulta a adição de novos gateways.
 ## Sobre o CarnaCode 2026
 O desafio **CarnaCode 2026** consiste em implementar todos os 23 padrões de projeto (Design Patterns) em cenários reais. Durante os 23 desafios desta jornada, os participantes são submetidos ao aprendizado e prática na idetinficação de códigos não escaláveis e na solução de problemas utilizando padrões de mercado.
 
+### eBook - Fundamentos dos Design Patterns
+Minha principal fonte de conhecimento durante o desafio foi o eBook gratuito [Fundamentos dos Design Patterns](https://lp.balta.io/ebook-fundamentos-design-patterns).
+
 ### Veja meu progresso no desafio
 [Incluir link para o repositório central]
