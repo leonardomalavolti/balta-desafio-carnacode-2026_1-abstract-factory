@@ -1,8 +1,6 @@
-![CR-1](https://github.com/user-attachments/assets/5b3f4530-df7d-4f27-abe2-4a9259ddf62a)
-
 ## 🥁 CarnaCode 2026 - Desafio 01 - Abstract Factory
 
-Oi, eu sou o [seu nome aqui] e este é o espaço onde compartilho minha jornada de aprendizado durante o desafio **CarnaCode 2026**, realizado pelo [balta.io](https://balta.io). 👻
+Oi, eu sou o **Leonardo Malavolti Monteiro** 👋 e este é o espaço onde compartilho minha jornada de aprendizado durante o desafio **CarnaCode 2026**, realizado pelo [balta.io](https://balta.io). 👻
 
 Aqui você vai encontrar projetos, exercícios e códigos que estou desenvolvendo durante o desafio. O objetivo é colocar a mão na massa, testar ideias e registrar minha evolução no mundo da tecnologia.
 
@@ -25,4 +23,114 @@ O desafio **CarnaCode 2026** consiste em implementar todos os 23 padrões de pro
 Minha principal fonte de conhecimento durante o desafio foi o eBook gratuito [Fundamentos dos Design Patterns](https://lp.balta.io/ebook-fundamentos-design-patterns).
 
 ### Veja meu progresso no desafio
-[Incluir link para o repositório central]
+
+## 🧩 Desafio
+
+Uma plataforma de e-commerce precisa integrar com múltiplos gateways de pagamento:
+
+- PagSeguro  
+- MercadoPago  
+- Stripe  
+
+Cada gateway possui seus próprios componentes:
+
+- Processador de pagamento  
+- Validador de cartão  
+- Logger  
+
+O código original utilizava um `switch-case` centralizado e instanciava diretamente as classes concretas, gerando:
+
+- Alto acoplamento  
+- Violação do OCP (Open/Closed Principle)  
+- Violação do DIP (Dependency Inversion Principle)  
+- Baixa escalabilidade
+
+---
+
+## 🎯 Objetivo
+
+Aplicar o padrão **Abstract Factory** para:
+
+- Eliminar o switch-case
+- Desacoplar o `PaymentService`
+- Garantir compatibilidade entre os componentes de cada gateway
+- Permitir a adição de novos gateways sem modificar código existente
+
+---
+
+## 🏗️ Solução Arquitetural
+
+Foi criada uma fábrica abstrata:
+
+IPaymentGatewayFactory
+
+E interfaces para os componentes:
+
+- IPaymentValidator
+- IPaymentProcessor
+- IPaymentLogger
+
+Cada gateway implementa sua própria família de objetos e sua própria fábrica concreta:
+
+- PagSeguroFactory
+- MercadoPagoFactory
+- StripeFactory
+
+O `PaymentService` depende apenas da abstração:
+
+public PaymentService(IPaymentGatewayFactory factory)
+
+Isso garante:
+
+- ✔ Extensibilidade
+- ✔ Baixo acoplamento
+- ✔ Alta coesão
+- ✔ Respeito aos princípios SOLID
+
+---
+
+## 📂 Estrutura do Projeto
+
+Domain  
+ └── Interfaces  
+
+Gateways  
+ ├── PagSeguro  
+ ├── MercadoPago  
+ └── Stripe  
+
+Application  
+ └── PaymentService  
+
+---
+
+## 💡 Benefícios Obtidos
+
+- Adição de novos gateways sem alterar código existente
+- Garantia de consistência entre os componentes de cada gateway
+- Melhor organização e separação de responsabilidades
+- Código preparado para injeção de dependência
+
+---
+
+## 📚 Aprendizados
+
+Durante este desafio, reforcei conceitos importantes como:
+
+- Design Patterns na prática
+- Arquitetura orientada a abstrações
+- SOLID aplicado a cenários reais
+- Estruturação profissional de projetos .NET
+
+---
+
+## 🔥 Próximos Passos
+
+- Implementar injeção de dependência via Microsoft.Extensions.DependencyInjection
+- Adicionar testes unitários
+- Evoluir para cenários multi-tenant
+
+---
+
+📌 Este projeto faz parte da minha evolução contínua como desenvolvedor backend .NET.
+
