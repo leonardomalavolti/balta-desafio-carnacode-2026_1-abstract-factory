@@ -1,3 +1,6 @@
+![CR-1](https://github.com/user-attachments/assets/5b3f4530-df7d-4f27-abe2-4a9259ddf62a)
+
+
 ## 🥁 CarnaCode 2026 - Desafio 01 - Abstract Factory
 
 Oi, eu sou o **Leonardo Malavolti Monteiro** 👋 e este é o espaço onde compartilho minha jornada de aprendizado durante o desafio **CarnaCode 2026**, realizado pelo [balta.io](https://balta.io). 👻
